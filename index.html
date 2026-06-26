@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoeFinder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1 class="brand" id="brand-link">NoeFinder</h1>
+    <p class="hero-sub">Compara precios de videojuegos en todas las tiendas</p>
+    <div class="search-wrapper">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Busca un juego" autocomplete="off" />
+        <button id="search-btn">Buscar</button>
+      </div>
+      <div id="search-suggestions" class="suggestions-dropdown hidden"></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid-header">
+      <h2 id="grid-title">Mejores Ofertas</h2>
+      <div id="filters-bar" class="filters">
+        <select id="sort-deals">
+          <option value="DealRating">Mejor valoradas</option>
+          <option value="Price">Menor precio</option>
+          <option value="Savings">Mayor descuento</option>
+          <option value="Reviews">Mejor reseñadas</option>
+          <option value="Recent">Más recientes</option>
+        </select>
+        <select id="store-filter">
+          <option value="">Todas las tiendas</option>
+          <option value="1">Steam</option>
+          <option value="25">Epic Games</option>
+          <option value="7">GOG</option>
+          <option value="11">Humble Bundle</option>
+          <option value="13">Fanatical</option>
+          <option value="3">GreenManGaming</option>
+          <option value="2">GamersGate</option>
+          <option value="8">Origin</option>
+          <option value="14">Blizzard</option>
+          <option value="15">GameBillet</option>
+          <option value="21">WinGameStore</option>
+          <option value="23">GamesPlanet</option>
+          <option value="27">IndieGala</option>
+          <option value="29">Razer Game Store</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="main-grid" class="games-grid"></div>
+
+    <button id="load-more-btn" class="btn-outline">Cargar más</button>
+    <button id="back-btn"      class="btn-outline hidden">Ver todas las ofertas</button>
+  </main>
+
+  <div id="game-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Cerrar">&#10005;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
