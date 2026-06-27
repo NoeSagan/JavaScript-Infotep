@@ -1,7 +1,7 @@
 const CFG = {
   cheapshark: 'https://www.cheapshark.com/api/1.0',
   steamStore: 'https://store.steampowered.com/api/appdetails',
-  corsProxy:  'https://api.allorigins.win/raw?url=',
+  corsProxy:  'https://corsproxy.io/?',
   ocBase:     'https://opencritic-api.p.rapidapi.com',
   ocHost:     'opencritic-api.p.rapidapi.com',
   rapidKey:   '860fa2a626msh8bfefe5e57cfe4bp12037fjsn3ea432dc86a3',
@@ -87,7 +87,7 @@ const api = {
   async getSteamData(appId) {
     if (!appId || appId === '0') return null;
     try {
-      const url = CFG.corsProxy + encodeURIComponent(CFG.steamStore + '?appids=' + appId + '&l=spanish');
+      const url = CFG.corsProxy + CFG.steamStore + '?appids=' + appId + '&l=spanish';
       const r = await fetch(url);
       if (!r.ok) return null;
       const data = await r.json();
